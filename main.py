@@ -22,7 +22,7 @@ with open(filename, encoding='utf-8') as file:
                 dict2[fields[i]] = description[i]
                 dict2[fields[1]] = dict3
                 i = i + 1
-                dict1.append(dict2)
+            dict1.append(dict2)
 
 out_file = open("müll.json", 'w')
 json.dump(dict1, out_file, indent=3)
