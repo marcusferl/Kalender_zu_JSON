@@ -1,6 +1,7 @@
+// Adding our garbage events
 function muell_event() {
     const fs = require('fs');
-    var obj = JSON.parse(fs.readFileSync('muell.json'))
+    var obj = JSON.parse(fs.readFileSync(path.join(baseDirectory, 'muell.json')))
 
     const date = new Date();
     const date_day = String(date.getDate()).padStart(2, '0')
@@ -9,7 +10,10 @@ function muell_event() {
 
     for (i = 0; i < obj.length; i++) {
         if ((obj[i].date['day'] == date_day) && (obj[i].date['month'] == date_month) && (obj[i].date['year'] == date_year)) {
-            return obj[i].name
+            return 'Heute: ' + obj[i].name
+        }
+        else {
+            return ''
         }
     }
 }
